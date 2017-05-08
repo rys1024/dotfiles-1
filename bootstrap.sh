@@ -52,14 +52,9 @@ chsh -s /bin/zsh
 header "Installing apps"
 
 # Essentials
-# brew cask install dropbox
-# brew cask install one-password
 # brew cask install slack
 # brew cask install atom
 # brew cask install sketch
-# brew cask install bartender
-# brew cask install framer
-# brew cask install tower
 # brew cask install omnifocus
 
 # ==============================================================================

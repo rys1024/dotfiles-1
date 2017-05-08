@@ -1,13 +1,13 @@
 # Dotfiles
 
 Alright... still under construction (pray for me).
-This was unofficially forked from [Kevin Clark's](https://github.com/vernalkick/dotfiles), and originally based off of [David Cornu's dotfiles](https://github.com/davidcornu/dotfiles).
+This was unofficially forked from [Rafael Conde's](https://github.com/rafaelconde/dotfiles)
 
 ## Installation
 
 ```shell
 $ cd ~/
-$ git clone git@github.com:rafaelconde/dotfiles.git
+$ git clone git@github.com:rys1024/dotfiles.git
 $ cd ~/dotfiles
 $ ./bootstrap.sh
 ```

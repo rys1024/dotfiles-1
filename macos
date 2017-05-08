@@ -57,12 +57,12 @@ defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
 defaults write NSGlobalDomain AppleLanguages -array "en" "nl"
-defaults write NSGlobalDomain AppleLocale -string "en_US@currency=EUR"
-defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Inches"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-sudo systemsetup -settimezone "Europe/Lisbon" > /dev/null
+sudo systemsetup -settimezone "Asia/Jerusalem" > /dev/null
 
 # Disable auto-correct
 # defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -134,7 +134,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 ###############################################################################
 
 # Dark menu bar and dock
-defaults write $HOME/Library/Preferences/.GlobalPreferences.plist AppleInterfaceTheme -string "Dark"
+#defaults write $HOME/Library/Preferences/.GlobalPreferences.plist AppleInterfaceTheme -string "Dark"
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
@@ -151,7 +151,7 @@ defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock persistent-apps -array
 
 # Show only open applications in the Dock
-# defaults write com.apple.dock static-only -bool true
+ defaults write com.apple.dock static-only -bool true
 
 # Group windows by application in Mission Control
 defaults write com.apple.dock expose-group-by-app -bool true
@@ -196,9 +196,9 @@ defaults write com.apple.dock wvous-tr-modifier -int 10
 # Bottom left screen corner → Start screen saver
 defaults write com.apple.dock wvous-bl-corner -int 0
 defaults write com.apple.dock wvous-bl-modifier -int 5
-# Bottom right screen corner → Launchpad
+# Bottom right screen corner → Mission Control
 defaults write com.apple.dock wvous-br-corner -int 0
-defaults write com.apple.dock wvous-br-modifier -int 0
+defaults write com.apple.dock wvous-br-modifier -int 2
 
 ###############################################################################
 # Safari & WebKit                                                             #
@@ -274,8 +274,8 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 # Show 24 hours a day
 defaults write com.apple.ical "number of hours displayed" 24
 
-# Week should start on Monday
-defaults write com.apple.ical "first day of the week" 1
+# Week should start on Sunday
+defaults write com.apple.ical "first day of the week" 0
 
 # Day starts at 9AM
 defaults write com.apple.ical "first minute of work hours" 540
@@ -294,48 +294,13 @@ defaults write com.apple.ical "first minute of work hours" 540
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
-###############################################################################
-# Transmission.app                                                            #
-###############################################################################
-
-# Use `~/Documents/Torrents` to store incomplete downloads
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
-
-# Use `~/Downloads` to store completed downloads
-defaults write org.m0k.transmission DownloadLocationConstant -bool true
-
-# Don’t prompt for confirmation before downloading
-defaults write org.m0k.transmission DownloadAsk -bool false
-defaults write org.m0k.transmission MagnetOpenAsk -bool false
-
-# Don’t prompt for confirmation before removing non-downloading active transfers
-defaults write org.m0k.transmission CheckRemoveDownloading -bool true
-
-# Trash original torrent files
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
-
-# Hide the donate message
-defaults write org.m0k.transmission WarningDonate -bool false
-
-# Hide the legal disclaimer
-defaults write org.m0k.transmission WarningLegal -bool false
-
-# IP block list.
-# Source: https://giuliomac.wordpress.com/2014/02/19/best-blocklist-for-transmission/
-defaults write org.m0k.transmission BlocklistNew -bool true
-defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
-defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
-
-# Randomize port on launch
-defaults write org.m0k.transmission RandomPort -bool true
 
 ###############################################################################
 # Tweetbot.app                                                                #
 ###############################################################################
 
 # Bypass the annoyingly slow t.co URL shortener
-defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
+#defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
 
 ###############################################################################
 # Kill affected applications                                                  #
